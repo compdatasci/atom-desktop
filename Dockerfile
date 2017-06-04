@@ -34,7 +34,7 @@ RUN add-apt-repository ppa:webupd8team/atom && \
         pandoc \
         ttf-dejavu && \
     apt-get clean && \
-   pip3 install -U pip \
+    pip3 install -U pip \
          setuptools && \
     pip3 install -U \
          autopep8 \
@@ -71,6 +71,7 @@ RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
         auto-detect-indentation \
         python-autopep8 \
         clang-format && \
+    mkdir -p $HOME/project && \
     chown -R $DOCKER_USER:$DOCKER_GROUP $DOCKER_HOME
 
 WORKDIR $DOCKER_HOME
