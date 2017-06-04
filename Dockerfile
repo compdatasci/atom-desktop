@@ -1,4 +1,4 @@
-# Builds a Docker image with Ubuntu 16.04, g++-5.4, and Atom
+# Builds a Docker image with Ubuntu 16.04, gcc, python3 and Atom
 #
 # Authors:
 # Xiangmin Jiao <xmjiao@gmail.com>
@@ -28,7 +28,17 @@ RUN add-apt-repository ppa:webupd8team/atom && \
         meld \
         atom \
         clang-format && \
+    apt-get install -y --no-install-recommends \
+        python3-pip \
+        python3-dev \
+        pandoc \
+        ttf-dejavu && \
     apt-get clean && \
+   pip3 install -U pip \
+         setuptools && \
+    pip3 install -U \
+         autopep8 \
+         flake8 && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ########################################################
@@ -53,10 +63,13 @@ RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
         linter \
         linter-gcc \
         linter-gfortran \
+        linter-flake8 \
         dbg \
         output-panel \
         dbg-gdb \
+        python-debugger \
         auto-detect-indentation \
+        python-autopep8 \
         clang-format && \
     chown -R $DOCKER_USER:$DOCKER_GROUP $DOCKER_HOME
 
