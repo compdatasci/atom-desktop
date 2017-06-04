@@ -41,7 +41,7 @@ After downloading the script, you can start the Docker image using the command
 ```
 python atom_desktop.py -p
 ```
-This will download and run the Docker image and then launch your default web browser to show the desktop environment. The `-p` option is optional, and it instructs the Python script to pull and update the image to the latest version.
+This will download and run the Docker image and then launch your default web browser to show the desktop environment. The `-p` option is optional, and it instructs the Python script to pull and update the image to the latest version. The work directory by default will be mapped to the current working directory on your host.
 
 If your source code is in a named Docker volume, e.g. `myproject`, you can mount the volume to the `~/project` directory inside the container using the command
 ```
