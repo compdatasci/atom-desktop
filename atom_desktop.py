@@ -13,7 +13,7 @@ import sys
 import subprocess
 import time
 
-APP = "ubuntu"
+APP = "atom"
 
 
 def parse_args(description):
