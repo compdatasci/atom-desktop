@@ -30,7 +30,7 @@ Then, log out and log back in before you can use Docker.
 To run the Docker image, first download the script [`atom_desktop.py`](https://raw.githubusercontent.com/x11vnc/atom-desktop/master/atom_desktop.py)
 and save it to the working directory where you will store your codes and data. You can download the script using command line: On Windows, start `Windows PowerShell`, use the `cd` command to change to the working directory where you will store your codes and data, and then run the following command:
 ```
-curl https://raw.githubusercontent.com/x11vnc/docker-desktop/atom/atom_desktop.py -outfile atom_desktop.py
+curl https://raw.githubusercontent.com/x11vnc/atom-desktop/master/atom_desktop.py -outfile atom_desktop.py
 ```
 On Linux or Mac, start a terminal, use the `cd` command to change to the working directory, and then run the following command:
 ```
