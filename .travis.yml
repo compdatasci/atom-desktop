@@ -28,8 +28,8 @@ script:
   - '[[ "$TRAVIS_EVENT_TYPE" == "push" && -n "$TRAVIS_COMMIT_RANGE" &&
         -z "$(git diff --name-only $TRAVIS_COMMIT_RANGE |
             grep -e Dockerfile -e .travis.yml)" ]] || [[ "$XVFB" != "1" ]] ||
-     (docker build --tag x11vnc/atom-desktop:16.04 --tag x11vnc/atom-desktop:latest . &&
-      docker push x11vnc/atom-desktop &&
+     (docker build --tag compdatasci/atom-desktop:latest . &&
+      docker push compdatasci/atom-desktop &&
       touch success)'
   # Test script without launching webbrowser and push new image if successful
   - './atom_desktop.py -d -n && docker stop $(docker ps -q)'

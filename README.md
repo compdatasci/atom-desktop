@@ -1,7 +1,7 @@
 # Docker Image for Atom
-This Docker image provides the Ubuntu 16.04 environment with X Windows with Atom. It is a demonstration of using x11vnc/desktop for some powerful applications. The X Windows will display in your web browser in full-screen mode. You can use this Docker image on 64-bit Linux, Mac or Windows. It allows you to use the same programming environment regardless which OS you are running on your laptop or desktop.
+This Docker image provides the Ubuntu 16.04 environment with X Windows with Atom. It is a demonstration of using compdatasci/desktop for some powerful applications. The X Windows will display in your web browser in full-screen mode. You can use this Docker image on 64-bit Linux, Mac or Windows. It allows you to use the same programming environment regardless which OS you are running on your laptop or desktop.
 
-[![Build Status](https://travis-ci.org/x11vnc/docker-desktop.svg?branch=atom)](https://travis-ci.org/x11vnc/docker-desktop) [![](https://images.microbadger.com/badges/image/x11vnc/atom-desktop.svg)](https://microbadger.com/images/x11vnc/atom-desktop)
+[![Build Status](https://travis-ci.org/compdatasci/atom-desktop.svg?branch=master)](https://travis-ci.org/compdatasci/atom-desktop) [![](https://images.microbadger.com/badges/image/compdatasci/atom-desktop.svg)](https://microbadger.com/images/compdatasci/atom-desktop)
 
 ## Preparation
 Before you start, you need to first install Python and Docker on your computer by following the steps below.
@@ -27,14 +27,14 @@ sudo adduser $USER docker
 Then, log out and log back in before you can use Docker.
 
 ## Running the Docker Image
-To run the Docker image, first download the script [`atom_desktop.py`](https://raw.githubusercontent.com/x11vnc/atom-desktop/master/atom_desktop.py)
+To run the Docker image, first download the script [`atom_desktop.py`](https://raw.githubusercontent.com/compdatasci/atom-desktop/master/atom_desktop.py)
 and save it to the working directory where you will store your codes and data. You can download the script using command line: On Windows, start `Windows PowerShell`, use the `cd` command to change to the working directory where you will store your codes and data, and then run the following command:
 ```
-curl https://raw.githubusercontent.com/x11vnc/atom-desktop/master/atom_desktop.py -outfile atom_desktop.py
+curl https://raw.githubusercontent.com/compdatasci/atom-desktop/master/atom_desktop.py -outfile atom_desktop.py
 ```
 On Linux or Mac, start a terminal, use the `cd` command to change to the working directory, and then run the following command:
 ```
-curl -s -O https://raw.githubusercontent.com/x11vnc/atom-desktop/master/atom_desktop.py
+curl -s -O https://raw.githubusercontent.com/compdatasci/atom-desktop/master/atom_desktop.py
 ```
 
 After downloading the script, you can start the Docker image using the command
