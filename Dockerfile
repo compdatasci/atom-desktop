@@ -48,6 +48,7 @@ RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
     apm install \
         language-cpp14 \
         language-matlab \
+        language-r \
         language-fortran \
         language-docker \
         autocomplete-python \
