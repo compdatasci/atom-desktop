@@ -3,3 +3,11 @@
     telemetryConsent: "no"
   welcome:
     showOnStartup: false
+  "autocomplete-python":
+    useKite: false
+  "git-plus":
+    experimental:
+      useSplitDiff: true
+  "split-diff":
+    ignoreWhitespace: false
+    syncHorizontalScroll: true
