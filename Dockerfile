@@ -44,7 +44,7 @@ RUN add-apt-repository ppa:webupd8team/atom && \
 ########################################################
 # Customization for user
 ########################################################
-COPY config/atom/config.cson $DOCKER_HOME/.config/atom/config.cson
+ADD config/atom $DOCKER_HOME/.config/atom
 
 RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
     apm install \
@@ -74,7 +74,7 @@ RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
         auto-detect-indentation \
         python-autopep8 \
         clang-format && \
-    ln -s -f $DOCKER_HOME/.config/atom/config.cson $DOCKER_HOME/.atom && \
+    ln -s -f $DOCKER_HOME/.config/atom/* $DOCKER_HOME/.atom && \
     mkdir -p $HOME/project && \
     chown -R $DOCKER_USER:$DOCKER_GROUP $DOCKER_HOME
 
