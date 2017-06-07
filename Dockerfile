@@ -44,6 +44,8 @@ RUN add-apt-repository ppa:webupd8team/atom && \
 ########################################################
 # Customization for user
 ########################################################
+ADD config/atom $DOCKER_HOME/.atom
+
 RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
     apm install \
         language-cpp14 \
