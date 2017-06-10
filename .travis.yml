@@ -27,7 +27,7 @@ script:
   # Build only if the commit range of a push contains Dockerfile or .travis.yml
   - '[[ "$TRAVIS_EVENT_TYPE" == "push" && -n "$TRAVIS_COMMIT_RANGE" &&
         -z "$(git diff --name-only $TRAVIS_COMMIT_RANGE |
-            grep -e Dockerfile -e .travis.yml)" ]] || [[ "$XVFB" != "1" ]] ||
+            grep -e Dockerfile -e .travis.yml -e config)" ]] || [[ "$XVFB" != "1" ]] ||
      (docker build --tag compdatasci/atom-desktop:latest . &&
       docker push compdatasci/atom-desktop &&
       touch success)'
