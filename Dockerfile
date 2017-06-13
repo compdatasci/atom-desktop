@@ -75,6 +75,7 @@ RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
         python-autopep8 \
         clang-format && \
     ln -s -f $DOCKER_HOME/.config/atom/* $DOCKER_HOME/.atom && \
+    rm -rf /tmp/* && \
     chown -R $DOCKER_USER:$DOCKER_GROUP $DOCKER_HOME
 
 WORKDIR $DOCKER_HOME
