@@ -9,10 +9,10 @@
   "linter-flake8":
     maxLineLength: 100
   "python-autopep8":
+    formatOnSave: true
     maxLineLength: 79
   "split-diff":
     ignoreWhitespace: false
     syncHorizontalScroll: true
   welcome:
     showOnStartup: false
-

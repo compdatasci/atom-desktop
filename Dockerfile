@@ -35,10 +35,10 @@ RUN add-apt-repository ppa:webupd8team/atom && \
         ttf-dejavu && \
     apt-get clean && \
     pip3 install -U pip \
-         setuptools && \
+        setuptools && \
     pip3 install -U \
-         autopep8 \
-         flake8 && \
+        autopep8 \
+        flake8 && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ########################################################
