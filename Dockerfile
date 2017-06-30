@@ -46,8 +46,7 @@ RUN add-apt-repository ppa:webupd8team/atom && \
 ########################################################
 ADD config/atom $DOCKER_HOME/.config/atom
 
-RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
-    apm install \
+RUN apm install \
         language-cpp14 \
         language-matlab \
         language-r \
@@ -74,8 +73,9 @@ RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
         auto-detect-indentation \
         python-autopep8 \
         clang-format && \
-    ln -s -f $DOCKER_HOME/.config/atom/* $DOCKER_HOME/.atom && \
     rm -rf /tmp/* && \
+    echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
+    echo 'ln -s -f $DOCKER_HOME/.config/atom/* $DOCKER_HOME/.atom' >> $DOCKER_HOME/.profile && \
     chown -R $DOCKER_USER:$DOCKER_GROUP $DOCKER_HOME
 
 WORKDIR $DOCKER_HOME
