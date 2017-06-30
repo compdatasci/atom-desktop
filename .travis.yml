@@ -11,5 +11,5 @@ script:
      docker push compdatasci/atom-desktop:next &&
      touch success'
   # Test script without launching webbrowser and push new image if successful
-  - './atom_desktop.py -d -n && docker stop $(docker ps -q)'
+  - './atom_desktop.py -d -n -t next && docker stop $(docker ps -q)'
   - docker images
