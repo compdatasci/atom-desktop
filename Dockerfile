@@ -3,7 +3,7 @@
 # Authors:
 # Xiangmin Jiao <xmjiao@gmail.com>
 
-FROM x11vnc/desktop:latest
+FROM x11vnc/desktop:next
 LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 
 USER root
