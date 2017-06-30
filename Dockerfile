@@ -76,7 +76,7 @@ RUN apm install \
     rm -rf /tmp/* && \
     echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
     echo 'ln -s -f $DOCKER_HOME/.config/atom/* $DOCKER_HOME/.atom' >> $DOCKER_HOME/.profile && \
-    echo '@atom .' >> $DOCKER_HOME/lxsession/LXDE/autostart && \
+    echo '@atom .' >> $DOCKER_HOME/.config/lxsession/LXDE/autostart && \
     chown -R $DOCKER_USER:$DOCKER_GROUP $DOCKER_HOME
 
 WORKDIR $DOCKER_HOME
