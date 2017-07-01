@@ -3,11 +3,13 @@
 # Authors:
 # Xiangmin Jiao <xmjiao@gmail.com>
 
-FROM x11vnc/desktop:latest
+FROM x11vnc/desktop:next
 LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 
 USER root
 WORKDIR /tmp
+
+ADD image/home $DOCKER_HOME/
 
 # Install system packages
 RUN add-apt-repository ppa:webupd8team/atom && \
@@ -39,15 +41,13 @@ RUN add-apt-repository ppa:webupd8team/atom && \
     pip3 install -U \
         autopep8 \
         flake8 && \
+    echo "move_to_config atom" >> /usr/local/bin/init_vnc && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ########################################################
 # Customization for user
 ########################################################
-ADD config/atom $DOCKER_HOME/.config/atom
-
-RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
-    apm install \
+RUN apm install \
         language-cpp14 \
         language-matlab \
         language-r \
@@ -74,8 +74,8 @@ RUN echo 'export OMP_NUM_THREADS=$(nproc)' >> $DOCKER_HOME/.profile && \
         auto-detect-indentation \
         python-autopep8 \
         clang-format && \
-    ln -s -f $DOCKER_HOME/.config/atom/* $DOCKER_HOME/.atom && \
     rm -rf /tmp/* && \
+    echo '@atom .' >> $DOCKER_HOME/.config/lxsession/LXDE/autostart && \
     chown -R $DOCKER_USER:$DOCKER_GROUP $DOCKER_HOME
 
 WORKDIR $DOCKER_HOME
