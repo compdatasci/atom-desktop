@@ -1,7 +1,0 @@
-# Config atom by copying defaults into $HOME/.config
-if [ ! -e $DOCKER_HOME/.config/atom ]; then
-    mkdir -p $DOCKER_HOME/.config/atom
-    rsync -a $DOCKER_HOME/.atom/ $DOCKER_HOME/.config/atom
-fi
-
-ln -s -f $DOCKER_HOME/.config/atom/* $DOCKER_HOME/.atom

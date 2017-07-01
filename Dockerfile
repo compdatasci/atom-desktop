@@ -41,7 +41,7 @@ RUN add-apt-repository ppa:webupd8team/atom && \
     pip3 install -U \
         autopep8 \
         flake8 && \
-    cat $DOCKER_HOME/.atom/init_atom >> /usr/local/bin/init_vnc && \
+    echo "move_to_config atom" >> /usr/local/bin/init_vnc && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ########################################################
