@@ -1,7 +1,7 @@
 "*":
   "autocomplete-python":
     useKite: false
-  core:
+  "core":
     telemetryConsent: "no"
   "git-plus":
     experimental:
@@ -11,8 +11,22 @@
   "python-autopep8":
     formatOnSave: true
     maxLineLength: 79
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "text.html.basic"
+      "text.html.php"
+      "text.tex.latex"
+    ]
+    locales: [
+      "en-US"
+    ]
   "split-diff":
     ignoreWhitespace: false
     syncHorizontalScroll: true
-  welcome:
+  "welcome":
     showOnStartup: false
