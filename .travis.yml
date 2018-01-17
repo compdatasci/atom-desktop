@@ -10,6 +10,4 @@ script:
   - 'docker build --tag compdatasci/atom-desktop:latest . &&
      docker push compdatasci/atom-desktop &&
      touch success'
-  # Test script without launching webbrowser and push new image if successful
-  - './atom_desktop.py -d -n && docker stop $(docker ps -q)'
   - docker images
