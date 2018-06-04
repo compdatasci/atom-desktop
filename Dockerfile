@@ -36,7 +36,7 @@ RUN add-apt-repository ppa:webupd8team/atom && \
         pandoc \
         ttf-dejavu && \
     apt-get clean && \
-    pip3 install -U pip \
+    pip3 install -U \
         setuptools && \
     pip3 install -U \
         autopep8 \
