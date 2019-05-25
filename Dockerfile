@@ -54,7 +54,6 @@ RUN apm install \
         language-fortran \
         language-docker \
         autocomplete-python \
-        autocomplete-fortran \
         git-plus \
         merge-conflicts \
         split-diff \
