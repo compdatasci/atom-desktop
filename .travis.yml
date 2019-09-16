@@ -7,7 +7,7 @@ script:
   - docker --version
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_USERPASS"
   # Build only if the commit range of a push contains Dockerfile or .travis.yml
-  - 'docker build --tag compdatasci/atom-desktop:latest . &&
-     docker push compdatasci/atom-desktop &&
+  - 'docker build --tag x11vnc/atom-desktop:latest . &&
+     docker push x11vnc/atom-desktop &&
      touch success'
   - docker images
